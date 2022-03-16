@@ -3,7 +3,7 @@ Sport and Show Forum
 
 Forum is made w MEAN stack:
 
-Mongo
+MongoDB
 Express
 Angular
 Node.js
