@@ -7,3 +7,10 @@ MongoDB
 Express
 Angular
 Node.js
+
+Here's the roadmap:
+* [ ] REST API
+    * [ ] Authentication
+        * [ ] Controller
+        * [ ] Service
+        * [ ] Model
