@@ -1,0 +1,29 @@
+header{
+    display: block;
+    background-color: #128d22;
+    padding: 20px;
+    border-bottom: 1px solid #e3e3e3;
+}
+h1{
+    color: #fff;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+li {
+    float: right;
+
+  }
+  
+  li a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
