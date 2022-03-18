@@ -4,7 +4,7 @@ const config = {
     development: {
         port: process.env.PORT || 3000,
         db_connection: 'mongodb://localhost/sportshow',
-        cookie_name: 'user',
+        cookie_name: 'X-Authorization',
         secret: 'Djamaikata shampiona',
         salt_rounds: 10,
         CORS: {
