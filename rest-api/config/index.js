@@ -6,7 +6,11 @@ const config = {
         db_connection: 'mongodb://localhost/sportshow',
         cookie_name: 'user',
         secret: 'Djamaikata shampiona',
-        salt_rounds: 10
+        salt_rounds: 10,
+        CORS: {
+            origin: ['http://localhost:4200'],
+            credentials: true
+        }
     },
     production: {}
 };
