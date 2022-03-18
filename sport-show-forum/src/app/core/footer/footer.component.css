@@ -1,0 +1,17 @@
+footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;   /* Height of the footer */
+    background:#6cf;
+    display: block;
+    background-color: #128d22;
+    padding: 20px;
+    border-bottom: 1px solid #e3e3e3;
+}
+h3{
+    color: #fff;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
