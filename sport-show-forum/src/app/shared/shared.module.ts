@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TimeDiffPipe } from './pipes/time-diff.pipe';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    TimeDiffPipe
+  ],
   imports: [
     CommonModule
   ]
