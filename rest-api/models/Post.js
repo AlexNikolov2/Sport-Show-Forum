@@ -6,8 +6,9 @@ const postSchema = new Schema({
     content: {type: String, required: [true, 'Content is required']},
     img: {type: String, required: [true, 'Img is required']},
     owner: {type: ObjectId, ref: 'User'},
-    likes: [{type: [ObjectId], ref: 'User'}],
-    comments: [{type: [ObjectId], ref: 'Comment'}]
+    likes: [{type: ObjectId, ref: 'User'}],
+    comments: [{type: ObjectId, ref: 'Comment'}],
+    createdAt: {type: Date, default: Date.now}
 });
 
 const Post = model('Post', postSchema);

@@ -16,7 +16,11 @@ const commentSchema = new Schema({
     likes: [{
         type: ObjectId,
         ref: 'User'
-    }]
+    }],
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 const Comment = model('Comment', commentSchema);
