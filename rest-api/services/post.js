@@ -36,4 +36,4 @@ module.exports = {
     updatePost,
     deletePost,
     like
-}
+};
