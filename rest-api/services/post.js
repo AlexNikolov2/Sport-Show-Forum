@@ -1,5 +1,5 @@
 const Post = require('../models/Post');
-const Comment = require('../models/Comment');
+
 
 async function create(post){
     const newPost = new Post(post);
@@ -29,11 +29,14 @@ async function like(id, userId){
     return await post.save();
 }
 
+
+
 module.exports = {
     create,
     getAll,
     getPostById,
     updatePost,
     deletePost,
-    like
+    like,
+    comment
 };
