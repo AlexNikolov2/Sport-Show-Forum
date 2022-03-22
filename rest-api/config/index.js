@@ -3,7 +3,7 @@ const env = process.env.NODE_ENV || 'development';
 const config = {
     development: {
         port: process.env.PORT || 3000,
-        db_connection: 'mongodb://localhost/sportshow',
+        db_connection: 'mongodb://localhost:27017/sportshow',
         cookie_name: 'X-Authorization',
         secret: 'Djamaikata shampiona',
         salt_rounds: 10,
