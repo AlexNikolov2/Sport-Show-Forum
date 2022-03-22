@@ -11,29 +11,44 @@ async function getUserByEmail(email) {
     return await User.findOne({ email: {$regex: new RegExp(`^${email}$`, 'i') } }).lean();
 }
 
-async function login(email, password){
-    const user = await getUserByEmail(email);
-    if(!user){
+async function getUserByUsername(username){
+    return await User.findOne({ username: {$regex: new RegExp(`^${username}$`, 'i') } }).lean();
+}
+
+async function login(email, username, password){
+    let userEmail = await getUserByEmail(email);
+    let userName = await getUserByUsername(username);
+    if(!userEmail || !userName){
         throw new Error('User not found');
     }
     const matched = await compare(password, user.password);
     if(!matched){
         throw new Error('Invalid email or password');
     }
-    const token = jwt.sign({email: user.email, _id: user._id}, secret);
+    const token = jwt.sign({email: userEmail.email, _id: userName._id}, secret);
     return token;
 }
 
 async function register(username, email, password){
-    let user = await getUserByEmail(email);
-    if(user){
+    let userEmail = await getUserByEmail(email);
+    let userName = await getUserByUsername(username);
+    if(userEmail || userName){
         throw new Error('User already exists');
     }
-    user = new User({
+    const hashedPassword = await hash(password, salt_rounds);
+    let user = new User({
         username,
         email,
-        hashedPassword: await hash(password),
+        hashedPassword,
         posts: []
     });
-    return await user.save();
+    return user.save();
 }
+
+module.exports = {
+    getUserById,
+    getUserByEmail,
+    getUserByUsername,
+    login,
+    register
+};
