@@ -10,7 +10,7 @@ const config = {
         CORS: {
             origin: ['http://localhost:4200'],
             credentials: true
-        }
+        },
     },
     production: {}
 };
