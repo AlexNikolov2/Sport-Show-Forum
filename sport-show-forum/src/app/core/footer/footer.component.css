@@ -1,13 +1,13 @@
-footer{
-    position:absolute;
-    bottom:0;
-    width:100%;
+footer {
+    bottom: 0;
+    color: #707070;
     height: 50px;
-    background:#6cf;
-    display: block;
+    left: 0;
+    position: fixed;
+    font-size: small;
+    width:100%;
+    text-align: center;
     background-color: #128d22;
-    padding: 10px;
-    border-bottom: 1px solid #e3e3e3;
 }
 h3{
     color: #fff;
