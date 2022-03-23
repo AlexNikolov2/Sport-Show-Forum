@@ -13,7 +13,7 @@
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     margin: 15px 15px 165px 15px;
 }
-img{
+.profile-wrap img{
     position: relative;
     top: -75px;
     width: 150px;
@@ -39,4 +39,27 @@ img{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.post{
+    border: 2px solid #128d22;
+    width: 90%;
+    height: 70px;
+    margin-bottom: 10px;
+}
+.post-info{
+    position: relative;
+    top: -55px;
+    display: flex;
+    flex-direction: row;
+    float: right;
+}
+.post-info img{
+    position: static;
+    width: 20px;
+    height: 20px;
+}
+.post-info p{
+    margin: 10px;
+    font-size: small;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
