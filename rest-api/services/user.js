@@ -16,16 +16,15 @@ async function getUserByUsername(username){
 }
 
 async function login(email, username, password){
-    let userEmail = await getUserByEmail(email);
-    let userName = await getUserByUsername(username);
-    if(!userEmail || !userName){
+    let user = await getUserByEmail(email);
+    if(!user){
         throw new Error('User not found');
     }
     const matched = await compare(password, user.password);
     if(!matched){
         throw new Error('Invalid email or password');
     }
-    const token = jwt.sign({email: userEmail.email, _id: userName._id}, secret);
+    const token = jwt.sign({email: user.email, _id: user._id}, secret);
     return token;
 }
 

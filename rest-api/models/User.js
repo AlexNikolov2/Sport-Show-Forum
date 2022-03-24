@@ -16,6 +16,9 @@ const userSchema = new Schema({
     avatar: {
         type: String,
     },
+    description: {
+        type: String
+    },
     posts: [{
         type: ObjectId,
         ref: 'Post'
