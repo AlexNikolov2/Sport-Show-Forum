@@ -1,6 +1,6 @@
 Sport and Show Forum
 
-Forum is made w MEAN stack:
+Forum is made with MEAN stack:
 
 MongoDB
 Express
