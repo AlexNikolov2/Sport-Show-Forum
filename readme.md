@@ -13,7 +13,7 @@ Currently on: *Designing*
 * - [x] - Profile
 * - [x] - Create Post
 * - [ ] - Create Comment
-* - [ ] - Edit Post
+* - [x] - Edit Post
 * - [ ] - Post Details
 * - [ ] - Catalog
 * - [x] - Header
