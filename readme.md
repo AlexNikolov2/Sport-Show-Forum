@@ -11,7 +11,7 @@ Currently on: *Designing*
 * - [x] - Login
 * - [x] - Register
 * - [x] - Profile
-* - [ ] - Create Post
+* - [x] - Create Post
 * - [ ] - Create Comment
 * - [ ] - Edit Post
 * - [ ] - Post Details
