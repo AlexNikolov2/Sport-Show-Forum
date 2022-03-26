@@ -7,4 +7,16 @@ Express
 Angular
 Node.js
 
+Currently on: *Designing*
+* - [x] - Login
+* - [ ] - Register
+* - [x] - Profile
+* - [ ] - Create Post
+* - [ ] - Create Comment
+* - [ ] - Edit Post
+* - [ ] - Post Details
+* - [ ] - Catalog
+* - [x] - Header
+* - [x] - Footer
+
 **Expected Finish Date: 16 April 2022**
