@@ -1,1 +1,36 @@
-<p>register works!</p>
+<form action="">
+    <h3>Register</h3>
+
+    <div class="group-a">
+        <div class="form-username">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username">
+        </div>
+        <div class="form-email">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+    </div>
+    <div class="group-b">
+        <div class="form-password">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <div class="form-repeatPassword">
+            <label for="repeatPassword">Repeat Password</label>
+            <input type="password" class="form-control" id="repeatPassword" placeholder="Repeat Password">
+        </div>
+    </div>
+    
+    <div class="form-avatar">
+        <label for="avatar">Avatar</label>
+        <input type="file" class="form-control" id="avatar" placeholder="Avatar">
+    </div>
+    <div class="form-description">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" rows="3"></textarea>
+    </div>
+    <div class="button-submit">
+        <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+</form>
