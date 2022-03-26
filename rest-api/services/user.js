@@ -28,11 +28,14 @@ async function login(email, username, password){
     return token;
 }
 
-async function register(username, email, password){
+async function register(username, email, password, repeatPassword){
     let userEmail = await getUserByEmail(email);
     let userName = await getUserByUsername(username);
     if(userEmail || userName){
         throw new Error('User already exists');
+    }
+    if(password !== repeatPassword){
+        throw new Error('Passwords do not match');
     }
     const hashedPassword = await hash(password, salt_rounds);
     let user = new User({
