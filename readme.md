@@ -9,7 +9,7 @@ Node.js
 
 Currently on: *Designing*
 * - [x] - Login
-* - [ ] - Register
+* - [x] - Register
 * - [x] - Profile
 * - [ ] - Create Post
 * - [ ] - Create Comment
