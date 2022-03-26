@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { UserModule } from './user/user.module';
 import { AuthRoutingModule } from './auth/auth-routing.module';
 import { AuthModule } from './auth/auth.module';
+import { PostModule } from './post/post.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { AuthModule } from './auth/auth.module';
     CoreModule,
     AuthModule,
     UserModule,
+    PostModule,
     AuthRoutingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
