@@ -2,7 +2,7 @@ form{
     display: flex;
     position: relative;
     left: 250px;
-    top: 50px;
+    top: 30px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -11,8 +11,7 @@ form{
     border: 3px solid #128d22;
     border-radius: 10px;
     backdrop-filter: blur(10px);
-    /*background-color: #72cc7e83;
-    overflow: visible;*/
+    /*background-color: #72cc7e83;*/
 }
 
 h3{
