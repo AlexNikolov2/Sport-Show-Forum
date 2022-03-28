@@ -1,0 +1,177 @@
+.post-wrap{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+}
+.post{
+    border: 4px solid #128d22;
+    width: 50%;
+    margin-bottom: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    float: right;
+    margin: 25px;
+}
+.post img{
+    position: static;
+    width: 100%;
+    height: 100%;
+}
+.post p{
+    margin: 10px;
+    font-size: 15px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+h3{
+    width: 100%;
+    color: #124d1b;
+    font-size: 25px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 5px;
+}
+.stats{
+    position: relative;
+    top: -25px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    float: right;
+    font-size: 36px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: bold;
+}
+.stats img{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    
+}
+.stats .likes-num{
+    margin: 10px;
+    font-size: 25px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.stats .comments-num{
+    margin: 10px;
+    font-size: 25px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.stats .date-num{
+    margin: 15px;
+    margin-left: 260px;
+    font-size: 15px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.comments{
+    position: relative;
+    top: -25px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 4px solid #128d22;
+}
+.comments h3{
+    text-align: center;
+    color: #124d1b;
+    font-size: 25px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 15px;
+}
+.comment{
+    position: relative;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 2px solid #128d22;
+}
+.comment-header{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    float: left;
+    align-items: center;
+}
+.comment-header img{
+    position: static;
+    width: 50px;
+    height: 50px;
+}
+.comment-user{
+    position: relative;
+    top: -29px;
+    left: 1px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    float: right;
+    align-items: center;
+    font-size: 35px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.info{
+    position: relative;
+    top: -30px;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    float: right;
+    align-items: center;
+}
+.info img{
+    position: static;
+    width: 20px;
+    height: 20px;
+}
+.comment-date{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    float: right;
+    align-items: center;
+    font-size: 15px;
+    font-style: italic;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.comment-likes{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    float: right;
+    align-items: center;
+    font-size: 15px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.comment > p{
+    position: relative;
+    width: 100%;
+    top: -30px;
+    display: flex;
+    flex-direction: row;
+    float: right;
+    align-items: center;
+    font-size: 15px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.no-comments{
+    font-size: 25px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #124d1b;
+    font-weight: bolder;
+}
