@@ -1,8 +1,7 @@
 Sport and Show Forum
 
 Forum is made with MEAN stack:
-
-MongoDB
+![Mongodb](https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/2560px-MongoDB_Logo.svg.png)
 Express
 Angular
 Node.js
