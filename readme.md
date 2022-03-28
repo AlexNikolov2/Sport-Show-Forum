@@ -18,7 +18,7 @@ Currently on: *Designing*
 * - [x] - Catalog
 * - [x] - Header
 * - [x] - Footer
-* - [ ] - Not Found
+* - [x] - Not Found
 
 Next operation: *Front End Modification*
 **Expected Finish Date: 16 April 2022**
