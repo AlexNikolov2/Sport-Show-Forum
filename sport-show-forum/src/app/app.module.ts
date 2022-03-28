@@ -8,6 +8,7 @@ import { UserModule } from './user/user.module';
 import { AuthRoutingModule } from './auth/auth-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { PostModule } from './post/post.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PostModule } from './post/post.module';
     AuthModule,
     UserModule,
     PostModule,
+    SharedModule,
     AuthRoutingModule,
   ],
   providers: [],
