@@ -20,7 +20,8 @@ import { EditPostComponent } from './edit-post/edit-post.component';
   exports: [
     CreatePostComponent,
     EditPostComponent,
-    PostsComponent
+    PostsComponent,
+    PostDetailsComponent
   ]
 })
 export class PostModule { }
