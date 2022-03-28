@@ -15,7 +15,7 @@ Currently on: *Designing*
 * - [ ] - Create Comment
 * - [x] - Edit Post
 * - [ ] - Post Details
-* - [ ] - Catalog
+* - [x] - Catalog
 * - [x] - Header
 * - [x] - Footer
 
