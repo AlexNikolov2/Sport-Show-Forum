@@ -19,7 +19,8 @@ import { EditPostComponent } from './edit-post/edit-post.component';
   ],
   exports: [
     CreatePostComponent,
-    EditPostComponent
+    EditPostComponent,
+    PostsComponent
   ]
 })
 export class PostModule { }
