@@ -9,7 +9,7 @@ Currently on: *Designing*
 * - [x] - Register
 * - [x] - Profile
 * - [x] - Create Post
-* - [ ] - Create Comment
+* - [x] - Create Comment
 * - [x] - Edit Post
 * - [x] - Post Details
 * - [x] - Catalog
