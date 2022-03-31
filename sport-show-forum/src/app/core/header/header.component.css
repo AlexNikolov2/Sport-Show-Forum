@@ -4,8 +4,9 @@ header{
     width: 100%;
     margin: -10px;
     padding-top: 1px;
-    background-color: #128d22;
+    background-color: #128c22;
     padding-bottom: 10px;
+    padding-right: 20px;
 }
 h1{
   color: #fff;
