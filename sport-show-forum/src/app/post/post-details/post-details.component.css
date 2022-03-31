@@ -203,3 +203,39 @@ h3{
     font-size: 15px;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+.buttons{
+    position: relative;
+    top: -30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    float: right;
+    align-items: center;
+    font-size: 15px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 15px;
+}
+.btn.btn-primary{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 35px;
+    border: 4px solid #128d22;
+    border-radius: 10px;
+}
+#like{
+    background-color: #128d22;
+    color: white;
+}
+#edit{
+    background-color: rgb(58, 94, 252);
+    border-color: rgb(58, 94, 252);
+    color: white;
+}
+#delete{
+    background-color: red;
+    border-color: red;
+    color: white;
+}
