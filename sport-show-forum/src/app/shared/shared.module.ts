@@ -2,13 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TimeDiffPipe } from './pipes/time-diff.pipe';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ShortenPipe } from './pipes/shorten.pipe';
 
 
 
 @NgModule({
   declarations: [
     TimeDiffPipe,
-    NotFoundComponent
+    NotFoundComponent,
+    ShortenPipe
   ],
   imports: [
     CommonModule
