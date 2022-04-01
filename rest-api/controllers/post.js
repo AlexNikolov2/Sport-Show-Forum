@@ -46,6 +46,17 @@ router.post('/:postId/like', isUser(), async(req, res) => {
     }
 });
 
+router.delete('/:postId/like', isCreator(), async(req, res) => {
+    try{
+        const post = await api.deletePost(req.params.postId, req.user._id);
+        res.status(201).send(post);
+    }
+    catch(err){
+        const error = mapErrors(err);
+        res.status(400).send(error);
+    }
+});
+
 /*router.put('/:postId', isCreator(), async(req, res) => {
     try{
         const post = await api.update(req.params.postId, req.body);
