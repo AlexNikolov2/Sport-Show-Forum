@@ -1,6 +1,5 @@
 const Post = require('../models/Post');
 
-
 async function create(post){
     const newPost = new Post(post);
     return await newPost.save();
@@ -29,6 +28,13 @@ async function like(id, userId){
     return await post.save();
 }
 
+async function likeComment(id, userId, postId){
+    const post = await Post.findById(postId);
+    const comment = post.comments.id(id);
+    comment.likes.push(userId);
+    comment.likes.length++;
+    return await post.save();
+}
 
 
 module.exports = {
@@ -38,5 +44,6 @@ module.exports = {
     updatePost,
     deletePost,
     like,
-    comment
+    comment,
+    likeComment
 };
