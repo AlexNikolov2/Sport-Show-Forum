@@ -52,7 +52,6 @@ module.exports = {
     updatePost,
     deletePost,
     like,
-    comment,
     likeComment,
     createComment,
     getCommentsByPostId,
