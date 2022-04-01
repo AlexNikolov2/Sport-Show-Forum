@@ -46,7 +46,7 @@ router.post('/:postId/like', isUser(), async(req, res) => {
     }
 });
 
-router.put('/:postId', isCreator(), async(req, res) => {
+/*router.put('/:postId', isCreator(), async(req, res) => {
     try{
         const post = await api.update(req.params.postId, req.body);
         res.status(201).send(post);
@@ -55,9 +55,9 @@ router.put('/:postId', isCreator(), async(req, res) => {
         const error = mapErrors(err);
         res.status(400).send(error);
     }
-});
+});*/
 
-
+module.exports = router;
 
 
 
