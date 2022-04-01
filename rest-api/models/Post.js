@@ -8,8 +8,7 @@ const postSchema = new Schema({
     owner: {type: ObjectId, ref: 'User'},
     likes: [{type: ObjectId, ref: 'User'}],
     comments: [{type: ObjectId, ref: 'Comment'}],
-    createdAt: {type: Date, default: Date.now}
-});
+}, {timestamps: {createdAt: 'created_at'}});
 
 const Post = model('Post', postSchema);
 
