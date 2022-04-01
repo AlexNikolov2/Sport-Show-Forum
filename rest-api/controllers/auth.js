@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const api = require('../services/auth');
+const api = require('../services/user');
 const {cookie_name} = require('../config');
 
 router.post('/register', async(req, res) => {

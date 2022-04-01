@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const api = require('../services/post');
-const commentApi = require('../services/comment');
 const {isUser, isCreator} = require('../middlewares/guards');
 const mapErrors = require('../utils/mapper');
 const preload = require('../utils/preload');
@@ -16,7 +15,7 @@ router.get('/:postId', async(req, res) => {
 });
 
 router.get('/:postId/comments', async(req, res) => {
-    const comments = await commentApi.getComments(req.params.id);
+    const comments = await api.getComments(req.params.id);
     res.json(comments);
 });
 

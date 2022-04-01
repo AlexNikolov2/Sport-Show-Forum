@@ -1,7 +1,7 @@
 const express = require('express');
 const config = require('./config');
 const expressSetup = require('./config/express');
-const mongooseSetup = require('./config/mongoose');
+const mongooseSetup = require('./config/database');
 
 const start = async () => {
     const app = express();
