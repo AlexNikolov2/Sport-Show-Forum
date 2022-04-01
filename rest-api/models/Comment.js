@@ -17,11 +17,7 @@ const commentSchema = new Schema({
         type: ObjectId,
         ref: 'User'
     }],
-    createdAt: {
-        type: Date,
-        default: Date.now
-    }
-});
+}, {timestamps: {createdAt: 'created_at'}});
 
 const Comment = model('Comment', commentSchema);
 
