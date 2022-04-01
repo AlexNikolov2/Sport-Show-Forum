@@ -1,4 +1,5 @@
 const Post = require('../models/Post');
+const Comment = require('../models/Comment');
 
 async function create(post){
     const newPost = new Post(post);
@@ -36,6 +37,13 @@ async function likeComment(id, userId, postId){
     return await post.save();
 }
 
+async function createComment(body){
+    return Comment.create({body});
+}
+
+async function getCommentsByPostId(postId){
+    return Comment.find({post: postId}).populate('owner', 'username').lean();
+}
 
 module.exports = {
     create,
@@ -45,5 +53,7 @@ module.exports = {
     deletePost,
     like,
     comment,
-    likeComment
+    likeComment,
+    createComment,
+    getCommentsByPostId,
 };
