@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const api = require('../services/post')
+const api = require('../services/post');
 const {isUser, isCreator} = require('../middlewares/guards');
 //mapper
 //preload
