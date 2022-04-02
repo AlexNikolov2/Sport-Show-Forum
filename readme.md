@@ -19,5 +19,6 @@ Current operation: *Front End Modification*
 
 
 Next operation: *Deployment*
+<br>
 Next operation: *Finalization*
 **Expected Finish Date: 16 April 2022**

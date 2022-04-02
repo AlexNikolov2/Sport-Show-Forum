@@ -6,7 +6,7 @@ const path = require('path');
 const routes = require('./routes');
 
 module.exports = (app) => {
-    app.use(express.static(path.join(__dirname, "../../sport-show-forum", 'public', 'dist')));
+    app.use(express.static(path.join(__dirname, '../views')));
     app.use(cors(config.CORS));
     app.use(express.urlencoded({ extended: true }));
     app.use(cookieParser());
