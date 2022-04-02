@@ -115,7 +115,3 @@ router.post('/:postId/comments/:commentId/like', isUser(), async(req, res) => {
 });
 
 module.exports = router;
-
-
-
-
