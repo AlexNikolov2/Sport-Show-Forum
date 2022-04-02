@@ -45,7 +45,7 @@ export class UserService {
   }
 
   getUser() {
-    return this.http.get<IUser>('/user')
+    return this.http.get<IUser>('/profile')
       .pipe(
         tap(user => this.user = user),
         catchError(err => {
