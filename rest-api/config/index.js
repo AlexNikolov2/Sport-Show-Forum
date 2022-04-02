@@ -11,6 +11,11 @@ const config = {
             origin: ['http://localhost:4200'],
             credentials: true
         },
+        cloudinary: { 
+            cloud_name: 'dowpa8evu', 
+            api_key: '172398447894245', 
+            api_secret: 'eQ9BWSDx4UTcmMu8kp5jOfZT3l8' 
+          },
     },
     production: {}
 };
