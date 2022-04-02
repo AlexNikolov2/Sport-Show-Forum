@@ -5,17 +5,7 @@ Forum is made with MEAN stack:
 <img src="https://www.orangemantra.com/wp-content/uploads/2018/03/mean.png" alt="mean" width="300">
 
 Finished: *Designing*
-* - [x] - Login
-* - [x] - Register
-* - [x] - Profile
-* - [x] - Create Post
-* - [x] - Create Comment
-* - [x] - Edit Post
-* - [x] - Post Details
-* - [x] - Catalog
-* - [x] - Header
-* - [x] - Footer
-* - [x] - Not Found
+Finished: *Back End Modification*
 
 Current operation: *Front End Modification*
 
@@ -26,7 +16,7 @@ Current operation: *Front End Modification*
 * - [ ] - Make proper validation
 * - [x] - Front end services and etc.
 
-Next operation: *Back End Modification*
+
 Next operation: *Deployment*
 Next operation: *Finalization*
 **Expected Finish Date: 16 April 2022**
