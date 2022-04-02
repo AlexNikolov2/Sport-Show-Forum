@@ -24,7 +24,7 @@ Current operation: *Front End Modification*
 * - [ ] - Make authentication
 * - [ ] - Establish pipes and interceptors
 * - [ ] - Make proper validation
-* - [ ] - Front end services and etc.
+* - [x] - Front end services and etc.
 
 Next operation: *Back End Modification*
 Next operation: *Deployment*
