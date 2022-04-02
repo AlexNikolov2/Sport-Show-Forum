@@ -15,7 +15,7 @@ router.get('/:postId', async(req, res) => {
     res.status(200).send(post);
 });
 
-router.delete('/:postId', isCreator(), async(req, res) => {
+router.delete('/:postId', isCreator, async(req, res) => {
     try{
         const post = await api.deletePost(req.params.postId, req.user._id);
         await post.save();
@@ -27,7 +27,7 @@ router.delete('/:postId', isCreator(), async(req, res) => {
     }
 });
 
-router.put('/:postId', isCreator(), async(req, res) => {
+router.put('/:postId', isCreator, async(req, res) => {
     try{
         const {keyword, title, img, description} = req.body;	
         try{

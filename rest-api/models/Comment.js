@@ -5,11 +5,11 @@ const commentSchema = new Schema({
         type: String,
         required: [true, 'Content is required']
     },
-    owner: {
+    ownerId: {
         type: ObjectId,
         ref: 'User'
     },
-    post: {
+    postId: {
         type: ObjectId,
         ref: 'Post'
     },

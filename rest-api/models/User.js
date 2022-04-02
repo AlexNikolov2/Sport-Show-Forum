@@ -23,7 +23,15 @@ const userSchema = new Schema({
     posts: [{
         type: ObjectId,
         ref: 'Post'
-    }]
+    }],
+    likes: [{
+        type: ObjectId,
+        ref: 'Post'
+    }],
+    comments: [{
+        type: ObjectId,
+        ref: 'Comment'
+    }],
 });
 
 userSchema.index({ email: 1 }, {
