@@ -4,7 +4,8 @@ import { PostDetailsComponent } from './post-details/post-details.component';
 import { PostsComponent } from './posts/posts.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
-
+import { PostRoutingModule } from './post-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -15,13 +16,16 @@ import { EditPostComponent } from './edit-post/edit-post.component';
     EditPostComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PostRoutingModule,
+    SharedModule
   ],
-  exports: [
+  /*exports: [
+    PostRoutingModule,
     CreatePostComponent,
     EditPostComponent,
     PostsComponent,
     PostDetailsComponent
-  ]
+  ]*/
 })
 export class PostModule { }
