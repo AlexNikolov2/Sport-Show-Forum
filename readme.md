@@ -14,7 +14,9 @@ Current operation: *Front End Modification*
 * - [ ] - Make authorization
 * - [ ] - Make authentication
 * - [ ] - Establish pipes and interceptors
+* - [ ] - Make proper error handling
 * - [ ] - Make proper validation
+* - [ ] - Create effective guards
 * - [x] - Front end services and etc.
 
 
