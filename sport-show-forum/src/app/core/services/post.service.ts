@@ -12,7 +12,7 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   getPosts() {
-    return this.http.get<IPost[]>('/posts');
+    return this.http.get<IPost[]>('/');
   }
 
   getPost(id: string) {
