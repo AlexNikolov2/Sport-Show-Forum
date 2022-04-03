@@ -10,8 +10,17 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class PostsComponent {
 
-  posts: IPost[] = [];
+  posts: IPost[] | undefined;
 
-  constructor() { }
+  constructor(private postService: PostService, private userService: UserService) { 
+    this.fetchPosts();
+  }
+
+  fetchPosts(): void {
+    this.posts = undefined;
+    this.postService.getPosts().subscribe(posts => {
+      this.posts = posts;
+    });
+  }
 
 }
