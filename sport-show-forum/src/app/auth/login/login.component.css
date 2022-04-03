@@ -11,7 +11,6 @@ form{
     border: 3px solid #128d22;
     border-radius: 10px;
     backdrop-filter: blur(10px);
-    /*background-color: #72cc7e83;*/
     overflow: visible;
 }
 
