@@ -6,6 +6,8 @@ import { UserService } from './services/user.service';
 import { PostService } from './services/post.service';
 import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from './guards/auth.guard';
+import { OwnerGuard } from './guards/owner.guard';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     UserService,
-    PostService
+    PostService,
+    AuthGuard,
+    OwnerGuard
   ],
 
 })
