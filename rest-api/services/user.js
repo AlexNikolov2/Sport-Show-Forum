@@ -28,7 +28,7 @@ async function login(email, username, password){
     return token;
 }
 
-async function register(username, email, password, repeatPassword){
+async function register(username, email, password, repeatPassword, avatar, description){
     let userEmail = await getUserByEmail(email);
     let userName = await getUserByUsername(username);
     if(userEmail || userName){
@@ -42,9 +42,12 @@ async function register(username, email, password, repeatPassword){
         username,
         email,
         hashedPassword,
+        avatar,
+        description,
         posts: []
     });
-    return user.save();
+    await user.save();
+    return user;
 }
 
 module.exports = {

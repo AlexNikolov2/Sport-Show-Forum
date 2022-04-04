@@ -1,35 +1,50 @@
-<form action="">
+<div *ngIf="submitted && (registerForm.invalid)" class="me">
+    <p *ngIf="registerForm.get('username')!.errors?.['required']">Username is required!</p>
+    <p *ngIf="registerForm.get('username')!.errors?.['minlength']">Username must be at least 3 characters!</p>
+    <p *ngIf="registerForm.get('email')!.errors?.['required']">Email is required!</p>
+    <p *ngIf="registerForm.get('email')!.errors?.['email']">Email is invalid!</p>
+    <p *ngIf="registerForm.get('password')!.errors?.['required']">Password is required!</p>
+    <p *ngIf="registerForm.get('password')!.errors?.['minlength']">Password must be at least 6 characters!</p>
+    <p *ngIf="registerForm.get('repeatPassword')!.errors?.['required']">Repeat Password is required!</p>
+    <p *ngIf="registerForm.get('repeatPassword')!.errors?.['minlength']">Repeat Password must be at least 6 characters!</p>
+    <p *ngIf="registerForm.get('repeatPassword')!.errors?.['sameValue']">Passwords must match!</p>
+    <p *ngIf="registerForm.get('avatar')!.errors?.['required']">Avatar is required!</p>
+    <p *ngIf="registerForm.get('description')!.errors?.['required']">Description is required!</p>
+    <p *ngIf="registerForm.get('description')!.errors?.['minlength']">Description must be at least 6 characters!</p>
+</div>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <h3>Register</h3>
 
     <div class="main-group">
         <div class="group-a">
             <div class="form-username">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username">
+                <input formControlName="username" type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username">
             </div>
             <div class="form-email">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                <input  formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
             </div>
         </div>
         <div class="group-b">
             <div class="form-password">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password">
+                <input  formControlName="password" type="password" class="form-control" id="password" placeholder="Password">
             </div>
             <div class="form-repeatPassword">
                 <label for="repeatPassword">Repeat Password</label>
-                <input type="password" class="form-control" id="repeatPassword" placeholder="Repeat Password">
+                <input  formControlName="repeatPassword" type="password" class="form-control" id="repeatPassword" placeholder="Repeat Password">
             </div>
         </div>
         
         <div class="form-avatar">
             <label for="avatar">Avatar</label>
-            <input type="file" class="form-control" id="avatar" placeholder="Avatar">
+            <input formControlName="avatar" type="file" class="form-control" id="avatar" placeholder="Avatar">
         </div>
         <div class="form-description">
             <label for="description">Description</label>
-            <textarea class="form-control" id="description" rows="3"></textarea>
+            <textarea  formControlName="description" class="form-control" id="description" rows="3"></textarea>
         </div>
     </div>
     

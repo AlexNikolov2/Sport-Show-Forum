@@ -18,7 +18,8 @@ const userSchema = new Schema({
         required: [true, 'Avatar is required']
     },
     description: {
-        type: String
+        type: String,
+        required: [true, 'Description is required']
     },
     posts: [{
         type: ObjectId,

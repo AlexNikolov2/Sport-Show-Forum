@@ -8,26 +8,23 @@ export function emailValidator(control: AbstractControl): ValidationErrors | nul
   return valid ? null : { email: true };
 }
 
-export function sameValueAsFactory(getTargetControl: () => AbstractControl | null, killSubscriptions: Observable<any>) {
+export function sameValueAsFactory(getPassControl: () => AbstractControl | null) {
     let subscription: Subscription | null = null;
-    return (control: AbstractControl): Observable<ValidationErrors | null> => {
-        return of({}).pipe(
-            map(() => {
-                if (subscription) { subscription.unsubscribe(); subscription = null; }
-                const targetControl = getTargetControl();
-                if (!targetControl) { return null; }
-                subscription = targetControl.valueChanges
-                    .pipe(
-                        takeUntil(killSubscriptions),
-                    )
-                    .subscribe({
-                        next: () => { control.updateValueAndValidity(); },
-                        complete: () => { subscription = null; }
-                    });
-
-                return targetControl?.value === control?.value ? null : { sameValue: true }
-            })
-        )
-    };
+    return (control: AbstractControl): ValidationErrors | null => {
+    const passControl = getPassControl();
+    if(!passControl) { return null; }
+    subscription = passControl.valueChanges.subscribe({
+      next: () => {
+        control.updateValueAndValidity();
+      },
+      complete: () => {
+        subscription?.unsubscribe();
+        subscription = null;
+      }
+    })
+    const passValue = passControl.value;
+    const repassValue = control.value;
+    return passValue == repassValue ? null : { passMatch: true };
+  }
 }
 

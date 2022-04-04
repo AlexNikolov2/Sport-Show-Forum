@@ -7,7 +7,7 @@ import { FormGroup, NgForm } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent{
-  registerForm!: FormGroup;
+  loginForm!: FormGroup;
 
   constructor() { }
 
