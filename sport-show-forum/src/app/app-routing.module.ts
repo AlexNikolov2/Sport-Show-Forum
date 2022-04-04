@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'post'
+    redirectTo: 'post/all-posts'
   },
   {
     path: 'post',

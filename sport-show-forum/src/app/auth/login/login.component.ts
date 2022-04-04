@@ -49,7 +49,7 @@ export class LoginComponent{
       error: (err) => {
         console.log(err.error.message);
         this.serverErr = err.error.message;
-        setTimeout(() => this.serverErr = undefined, 2000);
+        return this.serverErr;
       }
     })
   }
