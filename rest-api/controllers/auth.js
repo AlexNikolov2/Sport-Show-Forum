@@ -8,8 +8,8 @@ router.post('/register', async(req, res) => {
     try{
         const {username, email, password, img, description} = req.body;
         try{
-            const imgFile = req.body.img;
-            const upload = await uploadToCloudinary(imgFile);
+            const file = req.body.img;
+            const upload = await uploadToCloudinary(file);
             return upload;
         }
         catch(err){
