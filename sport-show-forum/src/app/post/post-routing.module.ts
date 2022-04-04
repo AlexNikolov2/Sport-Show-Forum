@@ -6,7 +6,7 @@ import { EditPostComponent } from './edit-post/edit-post.component'
 import { PostDetailsComponent } from './post-details/post-details.component';
 
 const routes: Routes = [
-  { path: 'posts', component: PostsComponent },
+  { path: 'all-posts', component: PostsComponent },
   { path: 'create', component: CreatePostComponent },
   { path: 'edit/:id', component: EditPostComponent },
   { path: 'details/:id', component: PostDetailsComponent }
