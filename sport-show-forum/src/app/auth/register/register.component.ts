@@ -18,7 +18,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formbuilder: FormBuilder,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    
   ) { }
 
 

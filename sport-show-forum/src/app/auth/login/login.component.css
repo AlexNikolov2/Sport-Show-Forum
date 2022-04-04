@@ -85,4 +85,12 @@ input:focus {
     font-size: 20px;
     border-radius: 10px;
   }
-  
+  .me {
+    position: absolute;
+    background-color: rgb(250, 103, 103);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: "Helvetica Neue", Helvetica, Arial;
+    border: 3px solid red;
+  }

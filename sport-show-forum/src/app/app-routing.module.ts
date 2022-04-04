@@ -5,14 +5,14 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'posts'
+    redirectTo: 'post'
   },
   {
-    path: 'posts',
+    path: 'post',
     loadChildren: () => import('./post/post.module').then(m => m.PostModule)
   },
   {
-    path: 'profile',
+    path: 'users',
     loadChildren: () => import('./user/user.module').then(m => m.UserModule)
   },
   {

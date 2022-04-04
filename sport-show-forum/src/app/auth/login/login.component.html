@@ -1,13 +1,21 @@
+<div *ngIf="submitted && (loginForm.invalid)" class="me">
+    <p *ngIf="loginForm.get('email')!.errors?.['required']">Email is required!</p>
+    <p *ngIf="loginForm.get('email')!.errors?.['email']">Email is invalid!</p>
+    <p *ngIf="loginForm.get('password')!.errors?.['required']">Password is required!</p>
+    <p *ngIf="loginForm.get('password')!.errors?.['minlength']">Password must be at least 6 characters!</p>
+    <p *ngIf="serverErr">{{serverErr}}</p>
+</div>
+
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <h3>Log In</h3>
 
     <div class="form-email">
         <label for="email">Email address</label>
-        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+        <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
     </div>
     <div class="form-password">
         <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Password">
+        <input formControlName="password" type="password" class="form-control" id="password" placeholder="Password">
     </div>
     <div class="button-submit">
         <button type="submit" class="btn btn-primary">Log In!</button>

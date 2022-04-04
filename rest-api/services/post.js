@@ -10,7 +10,7 @@ async function getAll(){
     return await Post.find({}).lean();
 }
 
-async function getPostById(id){
+async function getById(id){
     return await Post.findById(id).populate('owner', 'username').lean();
 }
 
@@ -48,7 +48,7 @@ async function getCommentsByPostId(postId){
 module.exports = {
     create,
     getAll,
-    getPostById,
+    getById,
     updatePost,
     deletePost,
     like,
