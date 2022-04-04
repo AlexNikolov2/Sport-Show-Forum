@@ -18,7 +18,7 @@ async function getUserByUsername(username){
 async function login(email, username, password){
     let user = await getUserByEmail(email);
     if(!user){
-        throw new Error('User not found');
+        throw new Error('There is not such a motherfucker here!');
     }
     const matched = await compare(password, user.password);
     if(!matched){
