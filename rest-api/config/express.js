@@ -4,7 +4,6 @@ const cors = require('cors');
 const config = require('./index');
 const path = require('path');
 const routes = require('./routes');
-const fileupload = require('express-fileupload'); 
 
 module.exports = (app) => {
     app.use(express.static(path.join(__dirname, )));
@@ -12,7 +11,6 @@ module.exports = (app) => {
     app.use(express.urlencoded({ extended: true }));
     app.use(cookieParser());
     app.use(express.json());
-    app.use(fileupload({useTempFiles: true}));
 
     app.use('/api', routes);
 };

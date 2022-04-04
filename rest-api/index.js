@@ -9,8 +9,7 @@ const start = async () => {
     const app = express();
     expressSetup(app);
     cloudinary.config(config.cloudinary);
-    await mongooseSetup();
-    
+    await mongooseSetup(); 
 
     const allowed = [
         ".js",
