@@ -12,9 +12,9 @@
             <a [routerLink]="['/post', post._id]" id="details">Details</a>
         </div>
     </div>
-    <div *ngIf="!posts" class="posts-none">
-        <h3>No posts yet</h3>
-        <p>Be the first to post!</p>
-    </div>
 </div>
+</div>
+<div *ngIf="posts == []" class="posts-none">
+    <h3>No posts yet</h3>
+    <p>Be the first to post!</p>
 </div>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {catchError, tap} from 'rxjs/operators';
 import { IUser } from 'src/app/shared/interface/user';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class UserService {
@@ -15,7 +16,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   login(data: {email: string; password: string}) {
-    return this.http.post<IUser>('/login', data)
+    return this.http.post<IUser>(environment.api_url + '/user/login', data)
       .pipe(
         tap(user => this.user = user),
         catchError(err => {
@@ -25,7 +26,7 @@ export class UserService {
   }
 
   register(data: {username: string; email: string; password: string; img: string; description: string}) {
-    return this.http.post<IUser>('/register', data)
+    return this.http.post<IUser>(environment.api_url + '/user/register', data)
       .pipe(
         tap(user => this.user = user),
         catchError(err => {
@@ -45,7 +46,7 @@ export class UserService {
   }
 
   getUser() {
-    return this.http.get<IUser>('/profile')
+    return this.http.get<IUser>(environment.api_url + '/user/profile')
       .pipe(
         tap(user => this.user = user),
         catchError(err => {

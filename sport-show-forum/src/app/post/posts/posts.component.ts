@@ -17,7 +17,7 @@ export class PostsComponent {
   }
 
   fetchPosts(): void {
-    this.posts = undefined;
+    this.posts = [];
     this.postService.getPosts().subscribe(posts => {
       this.posts = posts;
     });
