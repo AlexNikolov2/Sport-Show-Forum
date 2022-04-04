@@ -14,7 +14,7 @@ import { CustomValidatorDirective } from './directives/custom-validator.directiv
     NotFoundComponent,
     ShortenPipe,
     NumCountPipe,
-    CustomValidatorDirective
+    CustomValidatorDirective,
   ],
   imports: [
     CommonModule
