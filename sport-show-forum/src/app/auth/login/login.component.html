@@ -6,7 +6,7 @@
     <p *ngIf="serverErr">{{serverErr}}</p>
 </div>
 
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" method="post">
     <h3>Log In</h3>
 
     <div class="form-email">

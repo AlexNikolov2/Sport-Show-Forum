@@ -13,7 +13,7 @@
     <p *ngIf="registerForm.get('description')!.errors?.['minlength']">Description must be at least 6 characters!</p>
 </div>
 
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" method="post">
     <h3>Register</h3>
 
     <div class="main-group">
