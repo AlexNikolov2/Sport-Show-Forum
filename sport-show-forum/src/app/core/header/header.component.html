@@ -7,7 +7,8 @@
             <li><a *ngIf="!isLoggedIn" routerLink="/register">Register</a></li>
             <!--if user--><li><a *ngIf="isLoggedIn" routerLink="/profile">Your Profile</a></li>
             <!--if user--><li><a *ngIf="isLoggedIn" routerLink="/create">Create Post</a></li>
-            <!--if user--><li><a *ngIf="isLoggedIn || !isLoggedIn" routerLink="/post/all-posts">Home</a></li>
+            <!--if user--><li><a *ngIf="!isLoggedIn" routerLink="/all-posts">Home</a></li>
+            <li><a *ngIf="isLoggedIn" routerLink="/all-posts">Home</a></li>
     </ul>
     </nav>
 </header>

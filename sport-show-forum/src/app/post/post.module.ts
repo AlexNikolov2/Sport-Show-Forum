@@ -22,8 +22,7 @@ import { AppRoutingModule } from '../app-routing.module';
     PostRoutingModule,
     SharedModule,
     FormsModule,
-    AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   /*exports: [
     PostRoutingModule,

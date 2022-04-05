@@ -10,7 +10,7 @@ import { sameValueAsFactory } from 'src/app/shared/validators';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit, OnDestroy{
+export class LoginComponent implements OnInit{
   submitted: boolean = false;
   loginForm!: FormGroup;
   redirectTo: string | undefined;
@@ -33,10 +33,6 @@ export class LoginComponent implements OnInit, OnDestroy{
       this.redirectTo = redirectTo;
     }
   }
-  ngOnDestroy(): void {
-    this.loginsub$?.unsubscribe();
-  }
-
   onSubmit(): void {
     this.submitted = true;
     if(this.loginForm.invalid){

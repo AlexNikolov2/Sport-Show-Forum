@@ -10,7 +10,7 @@ import { sameValueAsFactory } from 'src/app/shared/validators';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit, OnDestroy {
+export class RegisterComponent implements OnInit{
   submitted: boolean = false;
   registerForm!: FormGroup;
   registersub$: Subscription | undefined;
@@ -32,11 +32,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
       avatar: ['', [Validators.required]],
       description: ['']
     });
-  }
-
-  ngOnDestroy() {
-    this.registersub$?.unsubscribe();
-
   }
 
   onSubmit(): void {
