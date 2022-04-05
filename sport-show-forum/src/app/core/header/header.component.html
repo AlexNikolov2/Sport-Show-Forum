@@ -2,12 +2,12 @@
     <h1>Sport & Show Forum</h1>
     <nav>
         <ul>
-            <!--if user--><li><a *ngIf="isLoggedIn" routerLink="">Logout</a></li>
+            <!--if user--><li><a *ngIf="isLoggedIn" (click)="logout()">Logout</a></li>
             <li><a *ngIf="!isLoggedIn" routerLink="/login">Login</a></li>
             <li><a *ngIf="!isLoggedIn" routerLink="/register">Register</a></li>
             <!--if user--><li><a *ngIf="isLoggedIn" routerLink="/profile">Your Profile</a></li>
             <!--if user--><li><a *ngIf="isLoggedIn" routerLink="/create">Create Post</a></li>
-            <!--if user--><li><a *ngIf="!isLoggedIn" routerLink="/">Home</a></li>
+            <!--if user--><li><a routerLink="/">Home</a></li>
     </ul>
     </nav>
 </header>
