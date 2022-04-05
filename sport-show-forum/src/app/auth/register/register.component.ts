@@ -32,6 +32,7 @@ export class RegisterComponent implements OnInit{
       avatar: ['', [Validators.required]],
       description: ['']
     });
+    
   }
 
   onSubmit(): void {
@@ -41,13 +42,15 @@ export class RegisterComponent implements OnInit{
     }
     this.registersub$ = this.userService.register(this.registerForm.value).subscribe(
       () => {
+        
         this.registerForm.reset();
-        this.router.navigateByUrl('/post/all-posts');
+        this.router.navigate(['/all-posts']);
       },
       err => {
         console.log(err);
       }
     );
+    localStorage.setItem('user', JSON.stringify(this.userService.user));
   }
 }
 
