@@ -7,11 +7,11 @@ const userSchema = new Schema({
     },
     email: {
         type: String,
-        required: [true, 'Email is required']
+        required: true
     },
     password: {
         type: String,
-        required: [true, 'Password is required']
+        required: true
     }, 
     avatar: {
         type: String,
@@ -19,7 +19,7 @@ const userSchema = new Schema({
     },
     description: {
         type: String,
-        required: [true, 'Description is required']
+        //required: [true, 'Description is required']
     },
     posts: [{
         type: ObjectId,
@@ -33,8 +33,8 @@ const userSchema = new Schema({
         type: ObjectId,
         ref: 'Comment'
     }],
-});
-
+}
+);
 userSchema.index({ email: 1 }, {
     unique: true,
     collation: {

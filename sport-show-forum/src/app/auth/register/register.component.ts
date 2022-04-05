@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit {
     }
     this.registersub$ = this.userService.register(this.registerForm.value).subscribe(
       () => {
-        this.router.navigate(['/posts']);
+        this.router.navigate(['/all-posts']);
       },
       err => {
         console.log(err);

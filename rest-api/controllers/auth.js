@@ -1,27 +1,23 @@
 const router = require('express').Router();
 const api = require('../services/user');
-const {cookie_name} = require('../config');
-const  {uploadToCloudinary} = require('../utils/cloudinary');
+const {cookie_name, salt_rounds} = require('../config');
 const mapErrors = require('../utils/mapper');
-const formidable = require('formidable');
 const {getFromData} = require('../utils/forms');
 const {isUser} = require('../middlewares/guards');
+const bcrypt = require('bcrypt');
+const {createToken} = require('../utils/jwt');
 
 router.post('/register', async(req, res) => {
     try{
-        const imageURL = [];
-        const form = formidable({ multiples: false });
-        const [formData, incFiles] = await getFromData(req, form);
-
-        for (const file of Object.values(incFiles)) {
-            const url = await uploadToCloudinary(file.path);
-            imageURL.push(url);
+        const {username, email, password, repeatPassword, avatar, description} = req.body;
+        if(password !== repeatPassword){
+            throw new Error('Passwords do not match');
         }
-        formData.img = imageURL;
-        const user = await api.register(formData, imageURL);
-        const token = user.createToken({ id: user._id });
-        res.cookie(cookie_name, token, {httpOnly: true});
-        res.status(200).send(user);
+        const hashedPassword = await bcrypt.hash(password, salt_rounds);
+        const user = await api.register(username, email, {password: hashedPassword}.toString(), avatar, description);
+        const token = createToken({_id: user._id});
+        res.cookie(cookie_name, token, {httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 7});
+        res.status(201).send(user);
     }
     catch(err){
         const error = mapErrors(err);
@@ -32,8 +28,8 @@ router.post('/register', async(req, res) => {
 router.post('/login', async(req, res) => {
     try{
         const {email, password} = req.body;
-        const user = await api.login({email, password});
-        const token = user.createToken({ id: user._id });
+        const user = await api.login(email, password);
+        const token = createToken({ id: user._id });
         res.cookie(cookie_name, token, {httpOnly: true});
         res.status(200).send(user);
     }

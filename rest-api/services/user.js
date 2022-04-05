@@ -1,5 +1,7 @@
 const User = require('../models/user');
 const {hash, compare} = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
 
 const {secret, salt_rounds} = require('../config');
 
@@ -8,14 +10,14 @@ async function getUserById(userId) {
 }
 
 async function getUserByEmail(email) {
-    return await User.findOne({ email: {$regex: new RegExp(`^${email}$`, 'i') } }).lean();
+    return await User.findOne({ email /*{$regex: new RegExp(`^${email}$`, 'i') }*/ }).lean();
 }
 
 async function getUserByUsername(username){
     return await User.findOne({ username: {$regex: new RegExp(`^${username}$`, 'i') } }).lean();
 }
 
-async function login(email, username, password){
+async function login(email, password){
     let user = await getUserByEmail(email);
     if(!user){
         throw new Error('There is not such a motherfucker here!');
@@ -34,14 +36,14 @@ async function register(username, email, password, repeatPassword, avatar, descr
     if(userEmail || userName){
         throw new Error('User already exists');
     }
-    if(password !== repeatPassword){
+    /*if(password !== repeatPassword){
         throw new Error('Passwords do not match');
-    }
+    }*/
     const hashedPassword = await hash(password, salt_rounds);
     let user = new User({
         username,
         email,
-        hashedPassword,
+        password: hashedPassword,
         avatar,
         description,
         posts: []
