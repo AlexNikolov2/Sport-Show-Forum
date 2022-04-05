@@ -35,6 +35,6 @@ export class AuthGuard implements CanActivate {
       return false;
     }
 
-    return this.router.parseUrl('/');
+    return this.router.parseUrl('/all-posts');
   }
 }

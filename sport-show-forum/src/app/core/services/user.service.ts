@@ -16,7 +16,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   login(data: {email: string; password: string}) {
-    return this.http.post<IUser>(environment.api_url + '/user/login', data)
+    return this.http.post<IUser>(environment.api_url + '/user/login', data, { withCredentials: true })
       .pipe(
         tap(user => this.user = user),
         catchError(err => {
@@ -25,7 +25,7 @@ export class UserService {
       );
   }
 
-  register(data: {username: string; email: string; password: string; img: string; description: string}) {
+  register(data: {username: string; email: string; password: string; avatar: string; description: string}) {
     return this.http.post<IUser>(environment.api_url + '/user/register', data)
       .pipe(
         tap(user => this.user = user),
@@ -36,9 +36,9 @@ export class UserService {
   }
 
   logout() {
-    return this.http.post('/logout', {})
+    return this.http.post('/user/logout', {})
       .pipe(
-        tap(() => this.user = undefined),
+        tap(() => this.user = null),
         catchError(err => {
           throw err;
         })

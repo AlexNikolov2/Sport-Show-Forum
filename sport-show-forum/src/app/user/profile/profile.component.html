@@ -1,30 +1,22 @@
 <div class="profile-wrap">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Hitler_portrait_crop.jpg" alt="">
+    <img src={{user!.avatar}} alt="porno">
     <div class="profile-info">
-        <h3>Kancler Kancleroski</h3>
-    <p>Andi mari Makedonija </p>
+        <h3>{{user!.username}}</h3>
+        <p>{{user!.description!}}</p>
     </div>
-    <div class="posts-wrap">
-        <div class="post">
-            <h3>Post 1</h3>
-            <div class="post-info">
-                <p>73 <img src="https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png"></p>
-                <p>2 <img src="http://cdn.onlinewebfonts.com/svg/img_420387.png"></p>
-            </div>
-        </div>
-        <div class="post">
-            <h3>Post 1</h3>
-            <div class="post-info">
-                <p>73 <img src="https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png"></p>
-                <p>2 <img src="http://cdn.onlinewebfonts.com/svg/img_420387.png"></p>
-            </div>
-        </div>
-        <div class="post">
-            <h3>Post 1</h3>
-            <div class="post-info">
-                <p>73 <img src="https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png"></p>
-                <p>2 <img src="http://cdn.onlinewebfonts.com/svg/img_420387.png"></p>
+    <div *ngIf="posts">
+        <div *ngFor="let post of posts" class="posts-wrap">
+            <div class="post">
+                <h3>{{post.title}}</h3>
+                <div class="post-info">
+                    <p>{{post.likes}} <img src="https://www.iconpacks.net/icons/2/free-heart-icon-3510-thumb.png"></p>
+                    <p>{{post.comments}} <img src="http://cdn.onlinewebfonts.com/svg/img_420387.png"></p>
+                </div>
             </div>
         </div>
     </div>
+    <div *ngIf="!posts" class="posts-none">
+        <h3>No posts yet</h3>
+    </div>
+    
 </div>

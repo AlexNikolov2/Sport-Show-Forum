@@ -10,10 +10,12 @@ import { environment } from '../../../environments/environment';
 })
 export class PostService {
 
+  posts: IPost[] | null | undefined = undefined;
+
   constructor(private http: HttpClient) { }
 
   getPosts() {
-    return this.http.get<IPost[]>(environment.api_url + '/posts');
+    return this.http.get<IPost[]>(environment.api_url + '/posts/');
   }
 
   getPost(id: string) {
@@ -42,5 +44,9 @@ export class PostService {
 
   likeComment(postId: string, commentId: string) {
     return this.http.post<IComment>(environment.api_url + `/posts/${postId}/comment/${commentId}/like`, {});
+  }
+
+  getPostsByUserId(id: string) {
+    return this.http.get<IPost[]>(environment.api_url +`/user/profile/${id}`);
   }
 }

@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './guards/auth.guard';
 import { OwnerGuard } from './guards/owner.guard';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { OwnerGuard } from './guards/owner.guard';
   imports: [
     CommonModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   exports: [
     HeaderComponent,

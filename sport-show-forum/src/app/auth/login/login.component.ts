@@ -44,7 +44,8 @@ export class LoginComponent implements OnInit, OnDestroy{
     }
     this.loginsub$ = this.userService.login(this.loginForm.value).subscribe({
       next: () => {
-        this.router.navigate(['/post/all-posts']);
+        this.loginForm.reset();
+        this.router.navigateByUrl('/all-posts');
       },
       error: (err) => {
         console.log(err.error.message);

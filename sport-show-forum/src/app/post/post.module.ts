@@ -6,6 +6,8 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { PostRoutingModule } from './post-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -18,7 +20,10 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     PostRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   /*exports: [
     PostRoutingModule,

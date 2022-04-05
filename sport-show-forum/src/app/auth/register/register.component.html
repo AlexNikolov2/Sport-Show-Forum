@@ -9,8 +9,6 @@
     <p *ngIf="registerForm.get('repeatPassword')!.errors?.['minlength']">Repeat Password must be at least 6 characters!</p>
     <p *ngIf="registerForm.get('repeatPassword')!.errors?.['sameValueAsFactory']">Passwords must match!</p>
     <p *ngIf="registerForm.get('avatar')!.errors?.['required']">Avatar is required!</p>
-    <p *ngIf="registerForm.get('description')!.errors?.['required']">Description is required!</p>
-    <p *ngIf="registerForm.get('description')!.errors?.['minlength']">Description must be at least 6 characters!</p>
 </div>
 
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" method="post">

@@ -45,6 +45,10 @@ async function getCommentsByPostId(postId){
     return Comment.find({post: postId}).populate('owner', 'username').lean();
 }
 
+async function getPostsByUserId(userId){
+    return Post.find({owner: userId}).lean();
+}
+
 module.exports = {
     create,
     getAll,

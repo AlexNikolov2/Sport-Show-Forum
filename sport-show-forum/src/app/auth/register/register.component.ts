@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { UserService } from 'src/app/core/services/user.service';
 import { sameValueAsFactory } from 'src/app/shared/validators';
@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
   submitted: boolean = false;
   registerForm!: FormGroup;
   registersub$: Subscription | undefined;
+  activatedRoute: ActivatedRoute | null | undefined;
 
   constructor(
     private formbuilder: FormBuilder,
@@ -29,11 +30,13 @@ export class RegisterComponent implements OnInit, OnDestroy {
       password: ['', [Validators.required, Validators.minLength(6)]],
       repeatPassword: ['', [Validators.required, Validators.minLength(6), sameValueAsFactory( () => this.registerForm?.get('password'))]],
       avatar: ['', [Validators.required]],
+      description: ['']
     });
   }
 
   ngOnDestroy() {
     this.registersub$?.unsubscribe();
+
   }
 
   onSubmit(): void {
@@ -43,7 +46,8 @@ export class RegisterComponent implements OnInit, OnDestroy {
     }
     this.registersub$ = this.userService.register(this.registerForm.value).subscribe(
       () => {
-        this.router.navigate(['posts/all-posts']);
+        this.registerForm.reset();
+        this.router.navigateByUrl('/post/all-posts');
       },
       err => {
         console.log(err);
