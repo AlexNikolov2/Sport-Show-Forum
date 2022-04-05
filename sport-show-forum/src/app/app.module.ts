@@ -9,6 +9,9 @@ import { AuthRoutingModule } from './auth/auth-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { PostModule } from './post/post.module';
 import { SharedModule } from './shared/shared.module';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,10 @@ import { SharedModule } from './shared/shared.module';
     PostModule,
     SharedModule,
     AuthRoutingModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    }),
+    EffectsModule.forRoot([]),
   ],
   providers: [ ],
   bootstrap: [AppComponent]
