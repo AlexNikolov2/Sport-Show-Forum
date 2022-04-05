@@ -46,7 +46,7 @@ export class UserService {
   }
 
   getUser() {
-    return this.http.get<IUser>(environment.api_url + '/user/profile')
+    return this.http.get<IUser>(environment.api_url + `/user/profile`)
       .pipe(
         tap(user => this.user = user),
         catchError(err => {

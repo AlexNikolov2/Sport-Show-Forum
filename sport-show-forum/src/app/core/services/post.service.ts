@@ -15,7 +15,7 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   getPosts() {
-    return this.http.get<IPost[]>(environment.api_url + '/posts/');
+    return this.http.get<IPost[]>(environment.api_url + '/posts');
   }
 
   getPost(id: string) {
@@ -46,7 +46,7 @@ export class PostService {
     return this.http.post<IComment>(environment.api_url + `/posts/${postId}/comment/${commentId}/like`, {});
   }
 
-  getPostsByUserId(id: string) {
-    return this.http.get<IPost[]>(environment.api_url +`/user/profile/${id}`);
+  getPostsByUserId() {
+    return this.http.get<IPost[]>(environment.api_url +`/user/profile`);
   }
 }
