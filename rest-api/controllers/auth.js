@@ -6,15 +6,27 @@ const {getFromData} = require('../utils/forms');
 const {isUser} = require('../middlewares/guards');
 const bcrypt = require('bcrypt');
 const {createToken} = require('../utils/jwt');
+const {isGuest} = require('../middlewares/guards');
+const {body} = require('express-validator');
 
-router.post('/register', async(req, res) => {
+router.post('/register',isGuest(),
+body('email')
+    .trim()
+    .isEmail().withMessage('Invalid email!'),
+body('password')
+    .trim()
+    .isLength({ min: 4 }).withMessage('Password must be at least 6 characters long!'),
+body('password')
+    .trim()
+    .custom((value, { req }) => {
+        if (value && value !== req.body.repeatPassword) {
+            throw new Error('Passwords don`t match!');
+        }
+        return true;
+    }), async(req, res) => {
     try{
         const {username, email, password, repeatPassword, avatar, description} = req.body;
-        if(password !== repeatPassword){
-            throw new Error('Passwords do not match');
-        }
-        const hashedPassword = await bcrypt.hash(password, salt_rounds);
-        const user = await api.register(username, email, {password: hashedPassword}.toString(), avatar, description);
+        const user = await api.register(username, email, password, avatar, description);
         const token = createToken({_id: user._id});
         res.cookie(cookie_name, token, {httpOnly: true, maxAge: 1000 * 60 * 60 * 24 * 7});
         res.status(201).send(user);
@@ -25,13 +37,18 @@ router.post('/register', async(req, res) => {
     }
 });
 
-router.post('/login', async(req, res) => {
+router.post('/login',isGuest(),
+body('email')
+    .trim()
+    .isEmail().withMessage('Invalid email!'),
+body('password')
+    .trim()
+    .isLength({ min: 4 }).withMessage('Password must be at least 6 characters long!'), async(req, res) => {
     try{
         const {email, password} = req.body;
         const user = await api.login(email, password);
-        const token = createToken({ id: user._id });
-        res.cookie(cookie_name, token, {httpOnly: true});
-        res.status(200).send(user);
+        res.cookie(cookie_name, user);
+        res.status(200).json(user);
     }
     catch(err){
         const error = mapErrors(err);

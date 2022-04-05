@@ -44,7 +44,7 @@ export class LoginComponent{
     }
     this.loginsub$ = this.userService.login(this.loginForm.value).subscribe({
       next: () => {
-        this.router.navigate([(`/${this.redirectTo || ''}` || '/')]);
+        this.router.navigate(['/post/all-posts']);
       },
       error: (err) => {
         console.log(err.error.message);

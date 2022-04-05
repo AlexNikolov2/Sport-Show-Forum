@@ -18,8 +18,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formbuilder: FormBuilder,
     private userService: UserService,
-    private router: Router,
-    
+    private router: Router
   ) { }
 
 
@@ -30,7 +29,6 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       repeatPassword: ['', [Validators.required, Validators.minLength(6), sameValueAsFactory( () => this.registerForm?.get('password'))]],
       avatar: ['', [Validators.required]],
-      description: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
@@ -45,7 +43,7 @@ export class RegisterComponent implements OnInit {
     }
     this.registersub$ = this.userService.register(this.registerForm.value).subscribe(
       () => {
-        this.router.navigate(['/all-posts']);
+        this.router.navigate(['posts/all-posts']);
       },
       err => {
         console.log(err);

@@ -36,9 +36,6 @@ async function register(username, email, password, repeatPassword, avatar, descr
     if(userEmail || userName){
         throw new Error('User already exists');
     }
-    /*if(password !== repeatPassword){
-        throw new Error('Passwords do not match');
-    }*/
     const hashedPassword = await hash(password, salt_rounds);
     let user = new User({
         username,
@@ -48,8 +45,7 @@ async function register(username, email, password, repeatPassword, avatar, descr
         description,
         posts: []
     });
-    await user.save();
-    return user;
+    return user.save();
 }
 
 module.exports = {
