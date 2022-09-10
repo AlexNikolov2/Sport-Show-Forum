@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgModel } from '@angular/forms';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
