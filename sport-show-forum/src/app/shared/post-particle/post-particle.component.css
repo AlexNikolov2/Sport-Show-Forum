@@ -1,0 +1,21 @@
+.post, .stats, .likes, .comments{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.likes, .comments{
+    gap: 5px;
+}
+.post{
+    border: 2px solid green;
+}
+a{
+    background-color: green;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 8px;
+}

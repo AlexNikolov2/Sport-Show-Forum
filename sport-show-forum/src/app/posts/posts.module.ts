@@ -4,6 +4,7 @@ import { AllPostsComponent } from './all-posts/all-posts.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -15,7 +16,8 @@ import { EditPostComponent } from './edit-post/edit-post.component';
     EditPostComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     AllPostsComponent
