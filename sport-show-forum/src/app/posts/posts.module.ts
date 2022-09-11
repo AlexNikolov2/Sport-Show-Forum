@@ -16,6 +16,9 @@ import { EditPostComponent } from './edit-post/edit-post.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    AllPostsComponent
   ]
 })
 export class PostsModule { }
