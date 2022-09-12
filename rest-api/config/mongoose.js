@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const config = require('./index');
 
 module.exports = () => {
+    console.log(config.DB_CONNECTION);
     return new Promise((resolve, reject) => {
         mongoose.connect(config.DB_CONNECTION, {
             useNewUrlParser: true,
