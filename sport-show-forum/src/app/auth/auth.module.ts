@@ -16,7 +16,8 @@ import { ProfileComponent } from './profile/profile.component';
     CommonModule
   ],
   exports: [
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ]
 })
 export class AuthModule { }
