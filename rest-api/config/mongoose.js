@@ -1,25 +1,21 @@
-const mongoose = require('mongoose');
-const config = require('./index');
+const mongoose = require("mongoose");
+const config = require("./index");
 
 module.exports = () => {
-    return new Promise((resolve, reject) => {
-        mongoose.connect(config.DB_CONNECTION, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        });
-        const db = mongoose.connection;
-
-        db.on('error', (err) => {
-            console.error('connection error: ' + err.message);
-            reject(err);
-        });
-        db.once('open', () => {
-            console.log('Db Connected!');
-            
-const TestModel = mongoose.model('test', new mongoose.Schema({name: String}))
-
-new TestModel({name: 'poo'}).save();
-            resolve();
-        });
+  return new Promise((resolve, reject) => {
+    mongoose.connect(config.DB_CONNECTION, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
-}
+    const db = mongoose.connection;
+
+    db.on("error", (err) => {
+      console.error("connection error: " + err.message);
+      reject(err);
+    });
+    db.once("open", () => {
+      console.log("Db Connected!");
+      resolve();
+    });
+  });
+};
