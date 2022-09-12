@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const config = require('./index');
 
 module.exports = () => {
-    console.log(config.DB_CONNECTION);
     return new Promise((resolve, reject) => {
         mongoose.connect(config.DB_CONNECTION, {
             useNewUrlParser: true,
@@ -16,6 +15,10 @@ module.exports = () => {
         });
         db.once('open', () => {
             console.log('Db Connected!');
+            
+const TestModel = mongoose.model('test', new mongoose.Schema({name: String}))
+
+new TestModel({name: 'poo'}).save();
             resolve();
         });
     });

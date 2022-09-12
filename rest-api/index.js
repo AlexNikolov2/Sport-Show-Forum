@@ -1,3 +1,6 @@
+const dotenv = require("dotenv");
+dotenv.config();
+
 const express = require('express');
 const path = require('path');
 
@@ -16,7 +19,7 @@ const allowed = [
 const start = async () => {
     const app = express();
     expressSetup(app);
-    await mongooseSetup();
+    await mongooseSetup(app);
 
     app.get("*", (req, res) => {
         if (allowed.filter(ext => req.url.indexOf(ext) > 0).length > 0) {

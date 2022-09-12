@@ -1,9 +1,11 @@
+require('dotenv').config();
+
 const env = process.env.NODE_ENV || 'development';
 
 const config = {
     development: {
         PORT: process.env.PORT || 3000,
-        DB_CONNECTION: "mongodb://localhost:27017/database", // enter your local MongoDB string here
+        DB_CONNECTION: process.env.DB_CONNECTION, // enter your local MongoDB string here
         COOKIE_NAME: 'X-Authorization',
         SECRET: 'very strong secret',
         SALT_ROUNDS: 10,
@@ -14,12 +16,12 @@ const config = {
     },
     production: {
         PORT: process.env.PORT || 80,
-        DB_CONNECTION: 'mongodb://localhost/sport-forum',
+        DB_CONNECTION: process.env.DB_CONNECTION,
         COOKIE_NAME: 'X-Authorization',
         SECRET: 'very strong secret',
         SALT_ROUNDS: 10,
         CORS: {
-            origin: ["https://pc-world-angular.herokuapp.com/"],
+            origin: ["http://localhost:4200"],
             credentials: true
         }
     }
