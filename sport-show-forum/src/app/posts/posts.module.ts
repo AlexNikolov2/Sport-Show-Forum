@@ -20,7 +20,8 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule
   ],
   exports: [
-    AllPostsComponent
+    AllPostsComponent,
+    CreatePostComponent
   ]
 })
 export class PostsModule { }
