@@ -1,0 +1,43 @@
+.details{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    max-width:300px;
+}
+.wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 10px;
+}
+@media screen and (min-width:700px) {
+    .wrap, img{
+        max-width: 350px
+    }
+}
+button{
+    border: none;
+    color: white;
+    padding: 8px 13px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 8px;
+}
+#like{
+    background-color: green;
+}
+#edit{
+    background-color: blue;
+}
+#delete{
+    background-color: red;
+}
