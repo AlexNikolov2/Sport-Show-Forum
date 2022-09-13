@@ -21,7 +21,9 @@ import { SharedModule } from '../shared/shared.module';
   ],
   exports: [
     AllPostsComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    EditPostComponent,
+    PostDetailsComponent
   ]
 })
 export class PostsModule { }
