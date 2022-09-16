@@ -12,3 +12,9 @@ const getUserById = (userId) => {
 const getUserByEmail = (email) => {
     return User.findOne({email});
 }
+
+module.exports = {
+    createUser,
+    getUserById,
+    getUserByEmail
+}
