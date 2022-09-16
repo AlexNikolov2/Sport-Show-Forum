@@ -5,7 +5,7 @@ const env = process.env.NODE_ENV || 'development';
 const config = {
     development: {
         PORT: process.env.PORT || 3000,
-        DB_CONNECTION: process.env.DB_CONNECTION, // enter your local MongoDB string here
+        DB_CONNECTION: process.env.DB_CONNECTION,
         COOKIE_NAME: 'X-Authorization',
         SECRET: 'very strong secret',
         SALT_ROUNDS: 10,
