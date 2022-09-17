@@ -5,7 +5,7 @@ import { PostDetailsComponent } from './post-details/post-details.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { SharedModule } from '../shared/shared.module';
-
+import { PostsRoutingModule } from './posts-routing.module';
 
 
 @NgModule({
@@ -23,7 +23,8 @@ import { SharedModule } from '../shared/shared.module';
     AllPostsComponent,
     CreatePostComponent,
     EditPostComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    PostsRoutingModule
   ]
 })
 export class PostsModule { }
