@@ -94,4 +94,12 @@ router.get("/logout", isLogged(), (req, res) => {
   res.status(204).send({ message: "Logged out successfully" });
 });
 
+function removePass(user){
+    const payload = { 
+        email: user.email, 
+        _id: user._id
+    }
+    return payload;
+}
+
 module.exports = router;
