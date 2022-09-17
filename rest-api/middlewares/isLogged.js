@@ -13,5 +13,4 @@ module.exports = () => (req, res, next) => {
         res.clearCookie(COOKIE_NAME);
         res.status(401).send({ message: 'Please log in' });
     }
-
 }
