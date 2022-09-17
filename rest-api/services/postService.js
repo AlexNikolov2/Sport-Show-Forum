@@ -9,7 +9,12 @@ const getPostById = (postId) => {
     return Post.findById(postId);
 }
 
+async function getAllPosts() {
+    return Post.find({}).lean();
+}
+
 module.exports = {
     createPost,
-    getPostById
+    getPostById,
+    getAllPosts
 }
