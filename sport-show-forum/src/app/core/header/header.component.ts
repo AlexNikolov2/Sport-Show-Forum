@@ -22,9 +22,6 @@ export class HeaderComponent implements OnInit {
     let header = document.querySelector('header');
     let li = document.querySelectorAll('li');
 
-    
-    
-
     if(window.screen.width)
 
     if ( event.target.checked ) {
