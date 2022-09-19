@@ -27,16 +27,12 @@ export class AuthService {
   }
 
   get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user')!);
-    console.log(user.email);
-    
-    
+    const user = JSON.parse(localStorage.getItem('user')!);    
     return user !== null;
   }
 
   getUserEmail(): string{
-    const user = JSON.parse(localStorage.getItem('user')!);
-    
+    const user = JSON.parse(localStorage.getItem('user')!);   
     return user.email;
   }
   
