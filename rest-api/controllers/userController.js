@@ -78,7 +78,6 @@ router.post(
       user = await createUser({ email, password: hashedPassword });
 
       const payload = removePass(user);
-
       const token = createToken({ id: user._id });
       res.cookie(COOKIE_NAME, token, { httpOnly: true });
       res.status(200).send(payload);
@@ -90,8 +89,15 @@ router.post(
 );
 
 router.get("/logout", isLogged(), (req, res) => {
-  res.clearCookie(COOKIE_NAME);
+  try{
+    res.clearCookie(COOKIE_NAME);
+    localStorage.removeItem('user');
   res.status(204).send({ message: "Logged out successfully" });
+  }
+  catch(error){
+    console.log(error);
+    res.status(400).send({ message: error.message });
+  }
 });
 
 function removePass(user){

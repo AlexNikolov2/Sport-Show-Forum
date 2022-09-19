@@ -25,5 +25,20 @@ export class AuthService {
   logout(): Observable<null>{
     return this.http.get<null>(environment.api_url + 'user/logout', {withCredentials: true})
   }
+
+  get isLoggedIn(): boolean {
+    const user = JSON.parse(localStorage.getItem('user')!);
+    //console.log(user);
+        
+    return user !== null;
+  }
+
+  getUserEmail(): string{
+    const user = JSON.parse(localStorage.getItem('user')!);
+    //console.log(user.email);
+       
+    return user.email;
+  }
+  
   
 }

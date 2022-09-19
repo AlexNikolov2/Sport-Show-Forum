@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -6,6 +7,8 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { PostsModule } from './posts/posts.module';
+import { AuthService } from './shared/services/auth.service';
+import { PostService } from './shared/services/post.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,8 @@ import { PostsModule } from './posts/posts.module';
     AppRoutingModule,
     CoreModule,
     PostsModule,
-    AuthModule
+    AuthModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

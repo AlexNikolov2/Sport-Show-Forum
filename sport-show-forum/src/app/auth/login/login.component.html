@@ -1,14 +1,21 @@
 <section class="login">
-    <form action="">
+    <div *ngIf="submitted && (loginForm.invalid)" class="me">
+        <p *ngIf="loginForm.get('email')!.errors?.['required']">Email is required!</p>
+        <p *ngIf="loginForm.get('email')!.errors?.['email']">Email is invalid!</p>
+        <p *ngIf="loginForm.get('password')!.errors?.['required']">Password is required!</p>
+        <p *ngIf="loginForm.get('password')!.errors?.['minlength']">Password must be at least 6 characters!</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <h1>Login</h1>
         <div class="data">
             <div class="email-group">
                 <label for="email">Email</label>
-                <input type="text" placeholder="Type your email...">
+                <input formControlName="email" type="text" class="form-control" id="email" placeholder="Type your email...">
             </div>
             <div class="password-group">
                 <label for="password">Password</label>
-                <input type="password" id="pass" placeholder="Enter your password...">
+                <input formControlName="password" type="password" class="form-control" id="pass" placeholder="Enter your password...">
             </div>
         </div>
         <button>Log in!</button>
