@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
+import { AuthService } from 'src/app/shared/services/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -8,7 +9,7 @@ import { NgModel } from '@angular/forms';
 export class HeaderComponent implements OnInit {
   contentEditable!: boolean;
 
-  constructor() { }
+  constructor( public authService: AuthService) { }
 
   
   ngOnInit() {
@@ -42,7 +43,7 @@ export class HeaderComponent implements OnInit {
    else{
     if (output) output.style.display = 'none';
    }
-   
+
 }
 
 }

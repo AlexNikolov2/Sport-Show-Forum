@@ -5,9 +5,10 @@
     <div class="right">
         <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu" (change)="toggleEditable($event)">
         <ul class="sidebarIconToggle">
-            <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="/login">Login</a></li>
-            <li><a routerLink="/register">Register</a></li>
+            <li><a  routerLink="/">Home</a></li>
+            <li><a *ngIf="!authService.isLoggedIn" routerLink="/login">Login</a></li>
+            <li><a *ngIf="!authService.isLoggedIn" routerLink="/register">Register</a></li>
+            <li><a *ngIf="authService.isLoggedIn" routerLink="/profile/:id">{{authService.getUserEmail()}}</a></li>
         </ul>
     </div>
 </header>
