@@ -90,8 +90,15 @@ router.post(
 );
 
 router.get("/logout", isLogged(), (req, res) => {
-  res.clearCookie(COOKIE_NAME);
+  try{
+    res.clearCookie(COOKIE_NAME);
+    localStorage.removeItem('user');
   res.status(204).send({ message: "Logged out successfully" });
+  }
+  catch(error){
+    console.log(error);
+    res.status(400).send({ message: error.message });
+  }
 });
 
 function removePass(user){

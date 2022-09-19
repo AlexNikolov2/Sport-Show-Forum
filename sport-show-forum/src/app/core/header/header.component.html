@@ -9,7 +9,7 @@
             <li><a *ngIf="!authService.isLoggedIn" routerLink="/login">Login</a></li>
             <li><a *ngIf="!authService.isLoggedIn" routerLink="/register">Register</a></li>
             <li><a *ngIf="authService.isLoggedIn" routerLink="/profile">{{authService.getUserEmail()}}</a></li>
-            <li><a *ngIf="authService.isLoggedIn" routerLink="/">Logout</a></li>
+            <li><a *ngIf="authService.isLoggedIn" (click)="onLogout()">Logout</a></li>
         </ul>
     </div>
 </header>
