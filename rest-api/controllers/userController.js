@@ -78,7 +78,6 @@ router.post(
       user = await createUser({ email, password: hashedPassword });
 
       const payload = removePass(user);
-
       const token = createToken({ id: user._id });
       res.cookie(COOKIE_NAME, token, { httpOnly: true });
       res.status(200).send(payload);

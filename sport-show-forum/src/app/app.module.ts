@@ -22,7 +22,7 @@ import { PostService } from './shared/services/post.service';
     AuthModule,
     HttpClientModule
   ],
-  providers: [AuthService, PostService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
