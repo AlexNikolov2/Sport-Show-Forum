@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { auth_success } from 'src/app/shared/store/auth.actions';
+import { GlobalState } from "../../shared/interfaces/global-state";
 
 @Component({
   selector: 'app-register',
@@ -11,18 +13,18 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  registerForm: FormGroup;
-  killSubscription = new Subject();
+  form: FormGroup;
+  killSubscription = new Subject<void>();
   error: string = '';
   isLoading: boolean = false;
   
   constructor(
     private fb: FormBuilder,
-    private store: Store<AppState>,
+    private store: Store<GlobalState>,
     private authService: AuthService,
     private router: Router
   ) {
-    this.registerForm = this.fb.group({
+    this.form = this.fb.group({
       email: ['', [Validators.required], Validators.email],
       password: ['', [Validators.required], Validators.minLength(6)],
     });
@@ -34,18 +36,18 @@ export class RegisterComponent {
   }
 
   onSubmit(): void {
-    if (this.registerForm.invalid || this.registerForm.pending) {
+    if (this.form.invalid || this.form.pending) {
       let message = '';
-      this.registerForm.get('email')?.hasError('required') ? message += `Email is required.` : '';
-      this.registerForm.get('email')?.hasError('invalidEmail') ? message += `\nInvalid email.` : '';
-      this.registerForm.get('password')?.hasError('required') ? message += `\nPassword is required.` : '';
-      this.registerForm.get('password')?.hasError('minLength') ? message += `\nPassword must be at least 8 characters!` : '';
+      this.form.get('email')?.hasError('required') ? message += `Email is required.` : '';
+      this.form.get('email')?.hasError('invalidEmail') ? message += `\nInvalid email.` : '';
+      this.form.get('password')?.hasError('required') ? message += `\nPassword is required.` : '';
+      this.form.get('password')?.hasError('minLength') ? message += `\nPassword must be at least 8 characters!` : '';
       this.error = message;
       return;
     }
 
-    const email = this.registerForm.value.email;
-    const password = this.registerForm.value.password;
+    const email = this.form.value.email;
+    const password = this.form.value.password;
     this.isLoading = true;
     this.authService.register({ email, password }).subscribe(
       user => {
@@ -54,7 +56,7 @@ export class RegisterComponent {
           email: user.email,
         }));
         this.isLoading = false;
-        this.registerForm.reset();
+        this.form.reset();
         this.router.navigateByUrl('/');
       },
       error => {

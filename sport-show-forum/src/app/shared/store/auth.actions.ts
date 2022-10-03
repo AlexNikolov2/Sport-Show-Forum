@@ -9,4 +9,4 @@ export const auth_check_fail = createAction(authCheckFail);
 export const logout_user = createAction(logoutUser);
 
 export type authStart = { email: string, password: string };
-export type authSuccess = { email: string, isAdmin: boolean, firstName?: string, lastName?: string, _id: string, phoneNumber?: string, city: string, location: string };
+export type authSuccess = { email: string, _id: string };
