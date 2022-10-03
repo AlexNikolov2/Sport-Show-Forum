@@ -1,5 +1,5 @@
 <section class="register">
-    <div *ngIf="submitted && (form.invalid)" class="me">
+    <div *ngIf="form.pending && (form.invalid)" class="me">
         <p *ngIf="form.get('email')!.errors?.['required']">Email is required!</p>
         <p *ngIf="form.get('email')!.errors?.['email']">Email is invalid!</p>
         <p *ngIf="form.get('password')!.errors?.['required']">Password is required!</p>

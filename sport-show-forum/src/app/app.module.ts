@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { PostsModule } from './posts/posts.module';
 import { AuthService } from './shared/services/auth.service';
 import { PostService } from './shared/services/post.service';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,10 @@ import { PostService } from './shared/services/post.service';
     CoreModule,
     PostsModule,
     AuthModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({}, {})
   ],
-  providers: [],
+  providers: [AuthService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
