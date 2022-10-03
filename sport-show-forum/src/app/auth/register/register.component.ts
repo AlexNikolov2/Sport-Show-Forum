@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs';
@@ -13,13 +13,13 @@ import { GlobalState } from "../../shared/interfaces/global-state";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  form: FormGroup;
+  form: UntypedFormGroup;
   killSubscription = new Subject<void>();
   error: string = '';
   isLoading: boolean = false;
   
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private store: Store<GlobalState>,
     private authService: AuthService,
     private router: Router
