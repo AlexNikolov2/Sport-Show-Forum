@@ -1,23 +1,23 @@
 <section class="register">
-    <div *ngIf="form.pending && (form.invalid)" class="me">
-        <p *ngIf="form.get('email')!.errors?.['required']">Email is required!</p>
-        <p *ngIf="form.get('email')!.errors?.['email']">Email is invalid!</p>
-        <p *ngIf="form.get('password')!.errors?.['required']">Password is required!</p>
-        <p *ngIf="form.get('password')!.errors?.['minlength']">Password must be at least 6 characters!</p>
-    </div>
-    
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <h1>Register</h1>
-        <div class="data">
-            <div class="email-group">
-                <label for="email">Email</label>
-                <input formControlName="email" class="form-control" type="text" placeholder="Type your email...">
-            </div>
-            <div class="password-group">
-                <label for="password">Password</label>
-                <input formControlName="password" type="password" class="form-control" id="pass" placeholder="Enter your password...">
-            </div>
+        <div *ngIf="submitted && (form.invalid)" class="me">
+            <p *ngIf="form.get('email')!.errors?.['required']">Email is required!</p>
+            <p *ngIf="form.get('email')!.errors?.['email']">Email is invalid!</p>
+            <p *ngIf="form.get('password')!.errors?.['required']">Password is required!</p>
+            <p *ngIf="form.get('password')!.errors?.['minlength']">Password must be at least 6 characters!</p>
         </div>
-        <button>Sign up!</button>
-    </form>
+    
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <h1>Register</h1>
+            <div class="data">
+                <div class="email-group">
+                    <label for="email">Email</label>
+                    <input formControlName="email" class="form-control" type="text" placeholder="Type your email...">
+                </div>
+                <div class="password-group">
+                    <label for="password">Password</label>
+                    <input formControlName="password" type="password" class="form-control" id="pass" placeholder="Enter your password...">
+                </div>
+            </div>
+            <button>Sign up!</button>
+        </form>
 </section>
