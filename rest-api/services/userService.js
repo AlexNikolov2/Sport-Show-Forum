@@ -10,7 +10,7 @@ const getUserById = (userId) => {
 }
 
 const getUserByEmail = (email) => {
-    return User.findOne({email});
+    return User.findOne(email);
 }
 
 module.exports = {
