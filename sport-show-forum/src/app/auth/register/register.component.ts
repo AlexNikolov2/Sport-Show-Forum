@@ -19,17 +19,31 @@ export class RegisterComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
+   
   }
 
+  
+
   onSubmit(){
+    const email = this.form.value.email;
+    const password = this.form.value.password;
     this.submitted = true;
     if (this.form.invalid) {
       return;
     }
-    this.authService.register(this.form.controls['email'].value, /*this.form.controls['password'].value*/);
-    localStorage.setItem('id', 'user')
-    console.log(localStorage);
-    this.form.reset();
-    this.router.navigate(['/all-posts']);
+    this.authService.register({email, password}).subscribe(user => {
+      if(user){
+        this.form.reset();
+        this.router.navigate(['/all-posts']);
+      }
+      else{
+        throw new Error("Something went wrong!");
+        
+      }
+    }
+    );
+  
+    
+    
   }
 }

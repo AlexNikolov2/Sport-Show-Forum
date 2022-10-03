@@ -8,7 +8,6 @@ import { IUser } from '../interfaces/user';
   providedIn: 'root'
 })
 export class AuthService {
-  localStorage = localStorage;
 
   constructor(
     private http: HttpClient
@@ -28,7 +27,7 @@ export class AuthService {
 
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user')!);
-    //console.log(user);
+    console.log(user);
         
     return user !== null;
   }
